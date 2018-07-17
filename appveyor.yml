@@ -1,0 +1,10 @@
+version: '{build}'
+image:
+- Visual Studio 2017
+- Ubuntu
+environment:
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
+build_script:
+- ps: .\build.ps1 --target=Test
+- sh: ./build.sh --target=Test
+test: off
